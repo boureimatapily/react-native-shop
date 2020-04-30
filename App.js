@@ -9,7 +9,8 @@ export default function App() {
   return (
     <View style={styles.container}>
       
-      <Item />
+      {/* <Item /> */}
+      <WhishList />
     </View>
   );
 }
