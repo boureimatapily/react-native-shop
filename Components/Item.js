@@ -3,19 +3,23 @@ import { Text, View, StyleSheet, Image, ScrollView } from 'react-native'
 import {AntDesign} from '@expo/vector-icons'
 
 export class Item extends Component {
+    constructor(props){
+        super(props)
+    }
     render() {
+        const {img} = this.props
         return (
-            <ScrollView style={styles.container} >
+            <View style={styles.container} >
                 <View style={styles.ItemContainer}>
                     <AntDesign name="close" size={30} style={styles.close} />
-                    <Image source={require('../assets/shoes.jpg')} style={styles.Itemimage} />
+                    <Image source={img} style={styles.Itemimage} />
                     <View style={styles.ItemText}>
-                        <Text style={styles.title}>LOW CLASSIC</Text>
-                        <Text  style={styles.titleText}>Reachable choes Nike</Text>
-                        <Text  style={styles.price}>$2450</Text>
+                        <Text style={styles.title}> {this.props.name} </Text>
+                        <Text  style={styles.titleText}> {this.props.detail} </Text>
+                        <Text  style={styles.price}> {this.props.price} </Text>
                     </View>
                 </View>
-            </ScrollView>
+            </View>
         )
     }
 }
@@ -25,13 +29,12 @@ const styles = StyleSheet.create({
         marginHorizontal:10,
     },
     ItemContainer:{
-        height:300,
-        width:200,
-        flexDirection:"column",
+        height:250,
+        width:150,
     },
     Itemimage:{
-        height:140,
-        width:150,
+        height:120,
+        width:130,
         alignSelf:"center"
     },
     close:{
@@ -45,7 +48,8 @@ const styles = StyleSheet.create({
     title:{
         fontSize:20,
         fontWeight:"bold",
-        color:"gray"
+        color:"gray",
+        textTransform:"uppercase"
     },
     price:{
         fontWeight:"bold",
