@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Text, View, StyleSheet, Image, ScrollView } from 'react-native'
+import { Text, View, StyleSheet, Image, ScrollView, TouchableOpacity } from 'react-native'
 import {AntDesign} from '@expo/vector-icons'
 
 export class Item extends Component {
@@ -11,7 +11,10 @@ export class Item extends Component {
         return (
             <View style={styles.container} >
                 <View style={styles.ItemContainer}>
-                    <AntDesign name="close" size={30} style={styles.close} />
+                    <TouchableOpacity>
+                        <AntDesign name="close" size={20} style={styles.close} />
+                    </TouchableOpacity>
+                    
                     <Image source={img} style={styles.Itemimage} />
                     <View style={styles.ItemText}>
                         <Text style={styles.title}> {this.props.name} </Text>
@@ -28,14 +31,12 @@ const styles = StyleSheet.create({
     container: {
         marginHorizontal:10,
     },
-    ItemContainer:{
-        height:250,
-        width:150,
-    },
+   
     Itemimage:{
-        height:120,
+        height:125,
         width:130,
-        alignSelf:"center"
+        alignSelf:"center",
+        marginBottom:5
     },
     close:{
         alignSelf:"flex-end",
