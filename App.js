@@ -11,6 +11,7 @@ export default function App() {
       
       {/* <Item /> */}
       <WhishList />
+      {/* <Checkout /> */}
     </View>
   );
 }

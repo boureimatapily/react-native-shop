@@ -70,7 +70,7 @@ export class WhishList extends Component {
 
 const styles = StyleSheet.create({
     container: {
-        marginVertical: 5,
+        marginHorizontal: 5,
     },
     headerContainer: {
         flexDirection: "row",
@@ -78,12 +78,13 @@ const styles = StyleSheet.create({
         marginBottom: 50
     },
     headerShopes: {
-        fontSize: 16,
+        fontSize: 20,
         color: "red",
         fontWeight: "bold"
     },
     headerWhislist: {
         fontWeight: "bold",
+        fontSize:16
     },
     footerIcons:{
        flexDirection:"row",
